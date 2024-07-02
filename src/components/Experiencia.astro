@@ -1,0 +1,30 @@
+---
+import Linkedin from "../icons/Linkedin.astro";
+import ExperienciaItem from "./ExperienciaItem.astro"
+
+const Experiencias = [
+  {
+    date: "Actualmente Practicas...",
+    title: "Practicante Full Stack",
+    company: "Colombiana Accesorios",
+    description:
+      "Brindé soporte, mejoré y añadí nuevas funcionalidades a la aplicación escritorio. Gestioné a los trabajadores de acuerdo con sus necesidades y las utilidades que requerían.",
+    link: "https://flowbite.com/docs/components/badge/"
+  },
+];
+
+
+---
+
+
+<!-- Lista de Experiencias -->
+<ol class="relative mt-16">
+  <!-- Iterar sobre las experiencias -->
+  {Experiencias.map((experiencia) => (
+      <li class="">
+      <!-- Renderizar el componente ExperienciaItem -->
+      <ExperienciaItem {...experiencia} />
+    </li>
+  ))}
+</ol>
+

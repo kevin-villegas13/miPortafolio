@@ -1,0 +1,45 @@
+---
+const personalImagen = "Kevin Villegas Pérez";
+import Badge from "./Badge.astro";
+import SocialPill from "./SocialPill.astro";
+import MailIcon from "../icons/Mail.astro";
+import LinkedinIcon from "../icons/Linkedin.astro";
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="https://media.licdn.com/dms/image/D4E03AQG9WQVubyhQnw/profile-displayphoto-shrink_200_200/0/1683603540036?e=2147483647&v=beta&t=Ox08BhhLFUsW8Zp6BXVXwJfEQ8XSBYJbCuceFA3veUI"
+    />
+    <a
+      href="https://www.linkedin.com/in/kevin-villegas"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl text-white"
+  >
+    Hey, soy Kevin
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 text-white dark:text-opacity-80 font-semibold"
+  >
+    +5 meses de experiencia aprendiendo nuevas tecnologías relacionadas con .NET
+    🇨🇴
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto:kevinvilleperez@gmail.com">
+      <MailIcon class="size-4" />
+      Contáctame
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/kevin-villegas">
+      <LinkedinIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+  </nav>
+</div>

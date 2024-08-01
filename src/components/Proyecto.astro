@@ -2,45 +2,68 @@
 import GitHub from "../icons/GitHub.astro";
 import Link from "../icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
+import NextJs from "../icons/NextJs.astro";
+import Mongo from "../icons/Mongo.astro";
+import MYSQL from "../icons/MYSQL.astro";
+import React from "../icons/React.astro";
+import Vite from "../icons/Vite.astro";
+import Nodejs from "../icons/Node.astro";
 
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    class: "bg-black text-white",
-    //icon: NextJS,
+    class: "bg-white text-black",
+    icon: NextJs,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    //icon: Tailwind,
+  MONGO: {
+    name: "Mongo",
+    class: "bg-white text-black",
+    icon: Mongo,
+  },
+  MYSQL: {
+    name: "Mysql",
+    class: "bg-white text-black",
+    icon: MYSQL,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-white text-black",
+    icon: React,
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-white text-black",
+    icon: Vite,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-white text-black",
+    icon: Nodejs,
   },
 };
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "E-Commerce",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image:
-      "https://plus.unsplash.com/premium_photo-1667162417511-5c897c896ed3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXBpfGVufDB8fDB8fHww",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "BEste proyecto es una aplicación eCommerce completa desarrollada con Node.js y Sequelize para el backend, y React Vite para el frontend. La aplicación incluye funcionalidades para la gestión de productos, administración, facturación, y un carrito de compras.",
+    github: "https://github.com/DaR3k6/Mi-tienda",
+    image: "../assets/ecomerce.png",
+    tags: [TAGS.NODE, TAGS.MYSQL, TAGS.REACT, TAGS.VITE],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Portafolio de Usuarios",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image:
-      "https://plus.unsplash.com/premium_photo-1667162417511-5c897c896ed3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXBpfGVufDB8fDB8fHww",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Este proyecto permite a cada usuario crear y gestionar su propio portafolio, donde pueden subir y mostrar sus propios proyectos. El backend está desarrollado con Node.js y MongoDB, mientras que el frontend utiliza React con Vite.",
+    github: "https://github.com/DaR3k6/Portafolio",
+    image: "../assets/portafolio.png",
+    tags: [TAGS.NODE, TAGS.MONGO, TAGS.REACT, TAGS.VITE],
   },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-white-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -70,7 +93,7 @@ const PROJECTS = [
               ))}
             </ul>
 
-            <div class="mt-2 text-gray-700 text-gray-400">{description}</div>
+            <div class="mt-2 text-white-700 text-white-400">{description}</div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github && (
                 <LinkButton href={github}>
@@ -78,12 +101,13 @@ const PROJECTS = [
                   Code
                 </LinkButton>
               )}
-              {link && (
+
+              {/* {link && (
                 <LinkButton href={link}>
                   <Link class="size-4" />
                   Preview
                 </LinkButton>
-              )}
+              )} */}
             </footer>
           </div>
         </div>

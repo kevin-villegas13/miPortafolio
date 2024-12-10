@@ -1,27 +1,34 @@
-<article
-  class="flex flex-col items-center justify-center gap-8 text-black-700 text-black-300 md:flex-row"
+<section
+  class="min-h-screen flex flex-col md:flex-row items-center justify-center gap-12 px-4 md:px-8 transition-transform duration-300 hover:scale-105 hover:shadow-lg bg-white dark:bg-black"
 >
-  <div
-    class="[&>p]:mb-4 [&>p>strong]:text-black-500 [&>p>strong]:text-black-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-black-pretty order-2 md:order-1"
-  >
-    <p>
-      Saludos, me llamo Kevin. Me intereso el mundo de la programación a los 18 años, debido a mi interés en el desarrollo web y el diseño. 
-      En la actualidad, tengo 21 años y dispongo de experiencia como desarrollador en equipos profesionales. 
-      Valoro mi ética de trabajo, la responsabilidad, la puntualidad y la organización.
-   </p>
-    <p>
-      En mi tiempo libre, trato de explorar las últimas 
-      tendencias tecnológicas y practicar actividades deportivas. Cumplir con el aprendizaje 
-      constante y contribuir al logro de los proyectos en los que participo
-      se evidencia en mi colaboración efectiva con equipos de trabajo.
+  <div class="w-full md:w-1/2 flex justify-center">
+    <div class="relative w-64 h-64 md:w-80 md:h-80">
+      <img
+        src="../../public/assets/me.webp"
+        alt="Tu Nombre"
+        class="w-full h-full object-cover rounded-full shadow-lg transition-transform duration-300 transform hover:scale-105 hover:rotate-3"
+      />
+    </div>
+  </div>
+  <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
+    <h3 class="text-2xl font-bold text-gray-400 dark:text-gray-300">
+      Desarrollador Web Full Stack
+    </h3>
+    <p
+      class="text-xl text-gray-800 dark:text-gray-300 max-w-md mx-auto md:mx-0"
+    >
+      Soy un desarrollador apasionado con experiencia en desarrollo web y
+      diseño. A mis 21 años, he trabajado en proyectos que me han permitido
+      crecer técnica y personalmente. Me encanta enfrentar desafíos y buscar
+      soluciones innovadoras para mejorar constantemente.
+    </p>
+    <p
+      class="text-xl text-gray-800 dark:text-gray-300 max-w-md mx-auto md:mx-0"
+    >
+      En mi tiempo libre, exploro nuevas tecnologías, trabajo en proyectos
+      personales y practico deportes. La curiosidad y la dedicación me impulsan
+      a seguir evolucionando y a contribuir efectivamente a los equipos en los
+      que participo.
     </p>
   </div>
-
-  <img
-    width="200"
-    height="200"
-    src="../assets/me.webp"
-    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 bg-pruple-500/5 ring-1 ring-black/70 ring-white/20"
-    style="object-position: 50% 50%"
-  />
-</article>
+</section>

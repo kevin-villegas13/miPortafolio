@@ -12,13 +12,12 @@ const Experiencias = [
 ---
 
 <!-- Lista de Experiencias -->
-<ol class="relative mt-16">
+<ol class="relative mt-8">
   <!-- Iterar sobre las experiencias -->
   {Experiencias.map((experiencia) => (
-      <li class="">
+    <li>
       <!-- Renderizar el componente ExperienciaItem -->
       <ExperienciaItem {...experiencia} />
     </li>
   ))}
 </ol>
-

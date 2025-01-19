@@ -3,14 +3,28 @@ import HeroPage from "./hero";
 import ExperienciePage from "@/pages/experience";
 import ProyectsPage from "@/pages/proyect";
 import AboutPage from "./about";
+import SectionContainer from "@/components/section-container";
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <HomeLayout>
-      <HeroPage />
-      <ExperienciePage />
-      <ProyectsPage />
-      <AboutPage />
+      <SectionContainer id="inicio">
+        <HeroPage />
+      </SectionContainer>
+
+      <SectionContainer id="experiencia">
+        <ExperienciePage />
+      </SectionContainer>
+
+      <SectionContainer id="proyectos">
+        <ProyectsPage />
+      </SectionContainer>
+
+      <SectionContainer id="sobre-mi">
+        <AboutPage />
+      </SectionContainer>
     </HomeLayout>
   );
-}
+};
+
+export default HomePage;

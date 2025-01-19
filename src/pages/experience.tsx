@@ -12,10 +12,7 @@ const Experiencias = [
 
 const ExperienciePage = () => {
   return (
-    <section
-      className="w-11/12 max-w-7xl mx-auto pt-40 md:pt-50"
-      id="experiencia"
-    >
+    <section className="w-11/12 max-w-7xl mx-auto pt-40 md:pt-50">
       <h2 className="mb-4 text-4xl font-bold text-center text-black/80 md:text-5xl  lg:text-6xl uppercase dark:text-white">
         EXPERIENCIA LABORAL
       </h2>

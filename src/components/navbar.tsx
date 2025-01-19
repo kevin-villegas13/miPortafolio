@@ -1,6 +1,6 @@
 import { Link } from "@heroui/link";
 import {
-  Navbar as HeroUINavbar,
+  Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
@@ -13,29 +13,29 @@ import { Logo } from "@/components/icons";
 import SelectLanguage from "./select-language";
 import { siteConfig } from "@/config/site";
 
-const Navbar = () => {
+const Navigation = () => {
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
+    <Navbar>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
-          <Link
+          <a
             className="flex justify-start items-center gap-1"
             color="foreground"
-            href="/"
+            href="#inicio"
           >
             <Logo />
             <p className="font-bold text-inherit">ACME</p>
-          </Link>
+          </a>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-6" justify="center">
           {siteConfig.map((item) => (
             <NavbarItem key={item.url}>
-              <Link
+              <a
                 href={item.url}
                 className="transition-colors duration-200 dark:text-white dark:hover:text-blue-300 text-black hover:text-blue-400"
               >
-                {item.title}{" "}
-              </Link>
+                {item.title}
+              </a>
             </NavbarItem>
           ))}
         </NavbarContent>
@@ -62,22 +62,21 @@ const Navbar = () => {
       {/* Menú de navegación desplegable para pantallas pequeñas */}
       <NavbarMenu>
         {siteConfig.map((item, index) => (
-          <NavbarMenuItem key={`${item.label}-${index}`}>
-            <Link
+          <NavbarMenuItem key={item.url}>
+            <a
               className="w-full"
               color={
                 index === siteConfig.length - 1 ? "foreground" : "foreground"
               }
               href={item.url}
-              size="lg"
             >
               {item.title}
-            </Link>
+            </a>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
-    </HeroUINavbar>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default Navigation;

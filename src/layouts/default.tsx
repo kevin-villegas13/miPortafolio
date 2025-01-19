@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
-import Navbar from "@/components/navbar";
+import Navigation from "@/components/navbar";
 import Footer from "@/components/footer";
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="relative flex flex-col h-screen">
-      <Navbar />
+      <Navigation />
       <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">
         {children}
       </main>

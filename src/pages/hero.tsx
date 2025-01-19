@@ -1,6 +1,8 @@
 import Indicator from "@/components/indicator";
+import ModalCorreo from "@/components/modal-correo";
 import SocialPill from "@/components/social-pill";
 import { redesSociales } from "@/config/red-social";
+
 import Typewriter from "typewriter-effect";
 
 const indicadores = [
@@ -41,6 +43,7 @@ const HeroPage = () => {
                 icono={red.icono}
               />
             ))}
+            <ModalCorreo />
           </nav>
         </div>
       </section>

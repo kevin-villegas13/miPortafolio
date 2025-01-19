@@ -1,3 +1,7 @@
+import { redesSociales } from "@/config/red-social";
+import ModalCorreo from "./modal-correo";
+import SocialPill from "./social-pill";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -17,25 +21,16 @@ const Footer = () => {
           </span>
         </div>
 
-        <nav className="flex flex-wrap items-center text-sm font-medium">
-          <ul className="flex flex-wrap items-center space-x-4">
-            <li>
-              <a
-                href="/#sobre-mi"
-                className="hover:underline text-black dark:text-white"
-              >
-                Sobre mí
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:kevinvilleperez@gmail.com"
-                className="hover:underline text-black dark:text-white"
-              >
-                Contacto
-              </a>
-            </li>
-          </ul>
+        <nav className="flex flex-wrap justify-center gap-4 mt-8">
+          {redesSociales.map((red, index) => (
+            <SocialPill
+              key={index}
+              href={red.href}
+              label={red.label}
+              icono={red.icono}
+            />
+          ))}
+          <ModalCorreo />
         </nav>
       </footer>
     </>

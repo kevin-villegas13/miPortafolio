@@ -1,40 +1,17 @@
 import Indicator from "@/components/indicator";
 import SocialPill from "@/components/social-pill";
+import { redesSociales } from "@/config/red-social";
 import Typewriter from "typewriter-effect";
-import { Mail, Phone, Github, Linkedin } from "lucide-react";
 
 const indicadores = [
   { end: 94, label: "Commits", subLabel: "Realizados" },
   { end: 32, label: "Proyectos", subLabel: "Realizados" },
 ];
 
-const redesSociales = [
-  {
-    href: "https://github.com/kevin-villegas13",
-    icono: <Github size={20} />,
-    label: "GitHub",
-  },
-  {
-    href: "https://www.linkedin.com/in/kevin-villegas-666bb61ab/",
-    icono: <Linkedin size={20} />,
-    label: "LinkedIn",
-  },
-  {
-    href: "mailto:kevinvilleperez@gmail.com",
-    icono: <Mail size={20} />,
-    label: "Enviar un correo",
-  },
-  {
-    href: "https://wa.me/573173552802",
-    icono: <Phone size={20} />,
-    label: "Contáctame por WhatsApp",
-  },
-];
-
 const HeroPage = () => {
   return (
     <>
-      <section className="flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-8 mt-10 sm:mt-16">
+      <section className="w-full max-w-7xl mx-auto pt-16 mb-20 grid gap-20 justify-items-center md:pt-40 md:mb-40  md:gap-10 items-center text-center">
         <div className="max-w-3xl w-full space-y-8 animate-opacity-slide">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black dark:text-white">
             ¡Hola, soy Kevin Villegas!
@@ -68,7 +45,7 @@ const HeroPage = () => {
         </div>
       </section>
 
-      <div className="w-11/12 max-w-4xl mx-auto flex flex-col gap-12 items-center justify-center md:flex-row md:gap-8 md:justify-between">
+      <div className="w-11/12 max-w-4xl mx-auto flex flex-col gap-12 items-center justify-center md:flex-row md:gap-8 md:justify-center">
         {indicadores.map((indicador) => (
           <Indicator
             key={indicador.label}

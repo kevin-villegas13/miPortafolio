@@ -3,16 +3,19 @@ import { UserRound } from "lucide-react";
 
 const AboutPage = () => {
   return (
-    <section className="pt-20 bg-[#090D18] md:pt-30 lg:pt-40" id="about">
+    <section
+      className="pt-20 md:pt-30 lg:pt-40 text-dark dark:text-white"
+      id="about"
+    >
       <div className="w-11/12 max-w-7xl mx-auto pb-20">
-        <h2 className="mb-8 text-4xl font-bold text-white md:text-5xl lg:text-6xl uppercase flex items-center justify-start">
+        <h2 className="mb-8 text-4xl font-bold md:text-5xl lg:text-6xl uppercase flex items-center justify-start">
           <UserRound className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mr-4" />
           Sobre mí
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2 items-center">
           <div className="flex flex-col gap-6">
-            <p className="text-white text-lg leading-8 md:text-xl lg:text-2xl">
+            <p className="text-lg leading-8 md:text-xl lg:text-2xl">
               Soy Kevin Villegas, desarrollador web apasionado por crear
               soluciones tecnológicas que resuelven problemas reales. Con
               experiencia en front-end y back-end, mi enfoque está en construir
@@ -20,7 +23,7 @@ const AboutPage = () => {
               usuario en el centro de cada decisión.
             </p>
 
-            <p className="text-white text-lg hidden lg:block leading-8 md:text-xl lg:text-2xl">
+            <p className="text-lg hidden lg:block leading-8 md:text-xl lg:text-2xl">
               Me esfuerzo por aprender constantemente y aplicar las últimas
               tecnologías para ofrecer productos innovadores. Siempre busco
               aportar valor a través de un trabajo colaborativo y una
@@ -29,7 +32,7 @@ const AboutPage = () => {
           </div>
 
           {/* Imagen */}
-          <div className="relative w-full flex justify-center md:justify-center items-center">
+          <div className="relative w-full flex justify-center items-center">
             <Image
               src="../image/me.webp"
               alt="Sobre mí"

@@ -46,7 +46,7 @@ const HeroPage = () => {
           <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-black dark:text-white dark:text-opacity-80 font-semibold leading-relaxed">
             Soy ingeniero de sistemas con pasión por transformar ideas complejas
             en soluciones digitales efectivas. Siempre buscando innovar y
-            aprender. 🇨🇴
+            aprender.
           </p>
           <nav className="flex flex-wrap justify-center gap-4 mt-8">
             {redesSociales.map((red, index) => (

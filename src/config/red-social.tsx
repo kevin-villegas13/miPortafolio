@@ -2,7 +2,7 @@ import { Phone, Github, Linkedin, Download } from "lucide-react";
 
 export const redesSociales = [
   {
-    href: "/path-to-your-cv.pdf",
+    href: "../pdf/CVKevin.pdf",
     icono: <Download size={20} />,
     label: "Descargar CV",
   },

@@ -1,9 +1,9 @@
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { Logo } from "@/components/icons";
 import SelectLanguage from "./select-language";
 import { siteConfig } from "../config/site";
 import MenuInferior from "./menu-inferior";
+import { Image } from "@heroui/image";
 
 const Navigation = () => {
   return (
@@ -17,8 +17,11 @@ const Navigation = () => {
               color="foreground"
               href="#inicio"
             >
-              <Logo />
-              <p className="font-bold text-inherit">ACME</p>
+              <Image
+                src="../image/logo-kevin.webp"
+                alt=""
+                className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-12"
+              />
             </a>
           </NavbarBrand>
 

@@ -81,7 +81,10 @@ const ProyectsPage = () => {
         <h2 className="text-4xl font-bold text-center text-black/80 md:text-5xl lg:text-6xl uppercase dark:text-white">
           <Typewriter
             options={{
-              strings: ["Proyectos"],
+              strings: [
+                "Proyectos de mi Portafolio",
+                "Descubre mis proyectos.",
+              ],
               autoStart: true,
               loop: true,
               deleteSpeed: 50,

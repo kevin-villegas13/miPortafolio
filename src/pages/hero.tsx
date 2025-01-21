@@ -20,7 +20,16 @@ const HeroPage = () => {
             <span className="text-primary-color">
               <Typewriter
                 options={{
-                  strings: ["FullStack", "Backend", "Frontend"],
+                  strings: [
+                    "Desarrollador apasionado",
+                    "Apasionado por la tecnología",
+                    "Creador de soluciones",
+                    "Desarrollador .NET",
+                    "Innovador constante",
+                    "Desarrollador FullStack",
+                    "Desarrollador Backend",
+                    "Desarrollador Frontend",
+                  ],
                   autoStart: true,
                   loop: true,
                   deleteSpeed: 50,

@@ -1,9 +1,14 @@
 import { redesSociales } from "@/config/red-social";
 import ModalCorreo from "./modal-correo";
 import SocialPill from "./social-pill";
+import { useState } from "react";
+import { useWindowSize } from "react-use";
+import Confetti from "react-confetti";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [showConfetti, setShowConfetti] = useState(false);
+  const { width, height } = useWindowSize();
 
   return (
     <>
@@ -30,7 +35,16 @@ const Footer = () => {
               icono={red.icono}
             />
           ))}
-          <ModalCorreo />
+          <ModalCorreo setShowConfetti={setShowConfetti} />
+
+          {showConfetti && (
+            <Confetti
+              numberOfPieces={1000}
+              width={width - 3}
+              height={height}
+              initialVelocityY={20}
+            />
+          )}
         </nav>
       </footer>
     </>

@@ -2,8 +2,10 @@ import Indicator from "@/components/indicator";
 import ModalCorreo from "@/components/modal-correo";
 import SocialPill from "@/components/social-pill";
 import { redesSociales } from "@/config/red-social";
-
 import Typewriter from "typewriter-effect";
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
+import { useState } from "react";
 
 const indicadores = [
   { end: 94, label: "Commits", subLabel: "Realizados" },
@@ -11,6 +13,9 @@ const indicadores = [
 ];
 
 const HeroPage = () => {
+  const [showConfetti, setShowConfetti] = useState(false);
+  const { width, height } = useWindowSize();
+
   return (
     <>
       <section className="w-full max-w-7xl mx-auto pt-16 mb-20 grid gap-20 justify-items-center md:pt-40 md:mb-40  md:gap-10 items-center text-center">
@@ -52,7 +57,16 @@ const HeroPage = () => {
                 icono={red.icono}
               />
             ))}
-            <ModalCorreo />
+            <ModalCorreo setShowConfetti={setShowConfetti} />
+
+            {showConfetti && (
+              <Confetti
+                numberOfPieces={1000}
+                width={width - 3}
+                height={height}
+                initialVelocityY={20}
+              />
+            )}
           </nav>
         </div>
       </section>

@@ -4,7 +4,7 @@ import Footer from "@/components/footer";
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="relative flex flex-col h-screen">
+    <div className="flex min-h-screen flex-col ">
       <Navigation />
       <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">
         {children}

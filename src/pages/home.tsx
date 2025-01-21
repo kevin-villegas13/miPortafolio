@@ -4,6 +4,7 @@ import ExperienciePage from "@/pages/experience";
 import ProyectsPage from "@/pages/proyect";
 import AboutPage from "./about";
 import SectionContainer from "@/components/section-container";
+import EducationPage from "./education";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,10 @@ const HomePage = () => {
 
       <SectionContainer id="proyectos">
         <ProyectsPage />
+      </SectionContainer>
+
+      <SectionContainer id="educacion">
+        <EducationPage />
       </SectionContainer>
 
       <SectionContainer id="sobre-mi">

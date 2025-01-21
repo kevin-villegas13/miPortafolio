@@ -8,8 +8,8 @@ import { useWindowSize } from "react-use";
 import { useState } from "react";
 
 const indicadores = [
-  { end: 94, label: "Commits", subLabel: "Realizados" },
-  { end: 32, label: "Proyectos", subLabel: "Realizados" },
+  { end: 58, label: "Commits", subLabel: "Realizados" },
+  { end: 12, label: "Proyectos", subLabel: "Realizados" },
 ];
 
 const HeroPage = () => {

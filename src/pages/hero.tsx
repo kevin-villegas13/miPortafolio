@@ -6,15 +6,17 @@ import Typewriter from "typewriter-effect";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
 import { useState } from "react";
-
-const indicadores = [
-  { end: 58, label: "Commits", subLabel: "Realizados" },
-  { end: 12, label: "Proyectos", subLabel: "Realizados" },
-];
+import { useGitHubData } from "@/hooks/useGitHubData";
 
 const HeroPage = () => {
+  const { repos, orgCount } = useGitHubData();
   const [showConfetti, setShowConfetti] = useState(false);
   const { width, height } = useWindowSize();
+
+  const indicadores = [
+    { end: orgCount, label: "Organizaciones", subLabel: "Partícipe" },
+    { end: repos.length, label: "Proyectos", subLabel: "Realizados" },
+  ];
 
   return (
     <>

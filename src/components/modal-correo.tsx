@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, ChangeEvent } from "react";
 import {
   Modal,
   ModalContent,
@@ -21,14 +21,12 @@ import { FormDate, FormErrors } from "@/service/interface/email-types";
 
 const ModalCorreo = ({ setShowConfetti }: ModalCorreoProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const [formData, setFormData] = useState<FormDate>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-
   const [isLoading, setIsLoading] = useState(false);
   const [formErrors, setFormErrors] = useState<FormErrors>({
     name: "",
@@ -37,15 +35,16 @@ const ModalCorreo = ({ setShowConfetti }: ModalCorreoProps) => {
     message: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    },
+    []
+  );
 
   const handleSendEmail = async () => {
     const errors = validateForm(formData);
@@ -87,35 +86,38 @@ const ModalCorreo = ({ setShowConfetti }: ModalCorreoProps) => {
     }, 10000);
   };
 
-  const renderInputField = (field: {
-    name: string;
-    label: string;
-    placeholder: string;
-    type: string;
-    value: string;
-  }) => {
-    const { name, label, placeholder, type, value } = field;
-    const isTextarea = type === "textarea";
-    const FieldComponent = isTextarea ? Textarea : Input;
+  const renderInputField = useCallback(
+    (field: {
+      name: string;
+      label: string;
+      placeholder: string;
+      type: string;
+      value: string;
+    }) => {
+      const { name, label, placeholder, type, value } = field;
+      const isTextarea = type === "textarea";
+      const FieldComponent = isTextarea ? Textarea : Input;
 
-    return (
-      <FieldComponent
-        key={name}
-        isRequired
-        label={label}
-        labelPlacement="outside"
-        name={name}
-        placeholder={placeholder}
-        value={value}
-        onChange={handleChange}
-        variant="bordered"
-        className="w-full"
-        rows={isTextarea ? 4 : undefined}
-        isInvalid={!!formErrors[name as keyof FormErrors]}
-        errorMessage={formErrors[name as keyof FormErrors] || ""}
-      />
-    );
-  };
+      return (
+        <FieldComponent
+          key={name}
+          isRequired
+          label={label}
+          labelPlacement="outside"
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={handleChange}
+          variant="bordered"
+          className="w-full"
+          rows={isTextarea ? 4 : undefined}
+          isInvalid={!!formErrors[name as keyof FormErrors]}
+          errorMessage={formErrors[name as keyof FormErrors] || ""}
+        />
+      );
+    },
+    [handleChange, formErrors]
+  );
 
   return (
     <>
